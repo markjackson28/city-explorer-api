@@ -6,12 +6,14 @@ This is where the City Explorer API lives.
 
 ### Author: Mark Thanadabouth
 
-### Collaborators: Phil Murphy
+### Collaborators: Phil Murphy, Wil J, Charlie f
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+
+> <img src="./lab07UML.png" alt="UML" width="200"/>
 
 ### Reflections and Comments
+
 * N/A
 
 Name of feature: Add server
@@ -20,6 +22,6 @@ Estimate of time needed to complete: 4 hours
 
 Start time: 1:30pm
 
-Finish time: _____
+Finish time: 7:23pm 08/01
 
-Actual time needed to complete: _____
+Actual time needed to complete: 4 hours
