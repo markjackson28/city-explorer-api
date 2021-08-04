@@ -28,10 +28,11 @@ app.use(cors());
 
 app.get('/weather', (request, response) => {
   let searchQuery = request.query.city;
+  // console.log(searchQuery);
   let weatherArr = [];
   if (searchQuery) {
     let cityWeather = weatherData.find((city) => city.city_name === searchQuery);
-
+    // console.log(cityWeather);
     if (cityWeather) {
       cityWeather.data.map((weather) => {
         weatherArr.push(new Forecast(`Forecast for ${weather.datetime}: Low: ${weather.low_temp}, High: ${weather.high_temp} with ${weather.weather.description}`, weather.datetime)
@@ -39,9 +40,13 @@ app.get('/weather', (request, response) => {
       });
       response.send(weatherArr);
     } else {
-      response.status(404).send('Error');
+      response.status(500).send('Error from server');
     }
   }
+});
+
+app.get('/*', (request, response) => {
+  response.status(404).send('Path does not exists');
 });
 
 // app.get('/', (request, response) => {
