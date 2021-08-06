@@ -37,8 +37,8 @@ Name of feature: Add live weather/server
 
 Estimate of time needed to complete: 7 Hours
 
-Start time: 2:50pm
+Start time: 2:50pm (08/03)
 
-Finish time: 
+Finish time: 4:02pm (08/06)
 
-Actual time needed to complete: 
+Actual time needed to complete: 8 hours
