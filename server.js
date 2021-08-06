@@ -31,15 +31,21 @@ class Forecast {
 app.get('/weather', async (request, response) => {
   let lat = request.query.lat;
   let lon = request.query.lon;
-
+  try {
   let weatherResults = await axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&key=${process.env.WEATHER_API_KEY}`);
   response.send(weatherResults.data.data.map((day) => new Forecast(day)));
+  } catch (error) {
+    // console.log(error);
+    // response.send([]);
+    // console.log(error.response.statusText);
+    response.status(400).send(error.response.statusText);
+  }
 });
 
 class Movie {
   constructor(movie) {
     this.title = movie.original_title;
-    this.overview = movie.original_title;
+    this.overview = movie.overview;
     this.average_votes = movie.vote_average;
     this.total_votes = movie.vote_count;
     this.img_url = movie.poster_path;
@@ -51,9 +57,15 @@ class Movie {
 app.get('/movies', async (request, response) => {
   //                        name in url 'city=<cityname>' ex: http://localhost:3001/movies?city=chicago
   let query = request.query.city;
-
+  // console.log(query);
+  try {
   let movieResults = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query=${query}`);
   response.send(movieResults.data.results.map((movie) => new Movie(movie)));
+  } catch (error){
+    response.status(404).send('Invaild search from movie');
+    // console.log(error);
+    // response.send(error.reponse);
+  }
 });
 
 app.get('/*', (request, response) => {
