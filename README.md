@@ -10,6 +10,8 @@ This is where the City Explorer API lives.
 
 ### Links and Resources
 * [Trello Board](https://trello.com/b/J5ZiKzZu/301n22-cityexplorere)
+* [Deployed Server](https://city-explorer-server-301n22mt.herokuapp.com/)
+
 - UML
 > <img src="./lab07UML.png" alt="UML" width="200"/>
 
@@ -31,7 +33,7 @@ Finish time: 7:23pm 08/01
 
 Actual time needed to complete: 4 hours
 
-## LAB - 08 
+## LAB - 08
 
 Name of feature: Add live weather/server
 
