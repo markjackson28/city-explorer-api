@@ -1,4 +1,4 @@
-# LAB - 07
+# LAB - 09
 
 ## City Explorer API
 
@@ -12,7 +12,8 @@ This is where the City Explorer API lives.
 * [Trello Board](https://trello.com/b/J5ZiKzZu/301n22-cityexplorere)
 * [Deployed Server](https://city-explorer-server-301n22mt.herokuapp.com/)
 
-- UML
+* UML
+
 > <img src="./lab07UML.png" alt="UML" width="200"/>
 
 > <img src="./lab08_UML.jpg" alt="UML" width="200"/>
@@ -44,3 +45,15 @@ Start time: 2:50pm (08/03)
 Finish time: 4:02pm (08/06)
 
 Actual time needed to complete: 8 hours
+
+## LAB - 09
+
+Name of feature: Refactoring
+
+Estimate of time needed to complete: 2 Hours
+
+Start time: 1:00pm
+
+Finish time: 2:20pm
+
+Actual time needed to complete: 1 hour
