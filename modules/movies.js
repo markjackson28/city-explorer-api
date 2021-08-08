@@ -6,10 +6,10 @@ module.exports = getMovies;
 class Movie {
   constructor(movie) {
     this.title = movie.original_title;
-    this.overview = movie.overview;
+    this.overview = movie.overview ? movie.overview : 'Movie Description Unavailable';
     this.average_votes = movie.vote_average;
     this.total_votes = movie.vote_count;
-    this.img_url = movie.poster_path;
+    this.img_url = movie.poster_path ? `http://image.tmdb.org/t/p/w500${movie.poster_path}`: '';
     this.popularity = movie.popularity;
     this.released_on = movie.release_date;
   }
