@@ -1,0 +1,28 @@
+'use strict'
+
+const axios = require('axios');
+module.exports = getWeather;
+
+// Class to get what we need from big data file
+class Forecast {
+  constructor(day) {
+    this.description = `Low: ${day.low_temp}, High: ${day.high_temp} with ${day.weather.description}`;
+    this.date = day.datetime;
+  }
+}
+
+async function getWeather(request, response) {
+  let lat = request.query.lat;
+  let lon = request.query.lon;
+  try {
+  let weatherResults = await axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&key=${process.env.WEATHER_API_KEY}`);
+  response.send(weatherResults.data.data.map((day) => new Forecast(day)));
+  } catch (error) {
+    // console.log(error);
+    // response.send([]);
+    // console.log(error.response.statusText);
+    response.status(400).send(error.response.statusText);
+  }
+}
+
+
