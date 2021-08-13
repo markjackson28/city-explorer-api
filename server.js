@@ -1,10 +1,11 @@
 'use strict';
 
+const express = require('express');
 // added .config();
 require('dotenv').config();
-const express = require('express');
 const app = express();
 const cors = require('cors');
+// added use(cors())
 app.use(cors());
 const weather = require('./modules/weather.js');
 const movies = require('./modules/movies.js');
@@ -13,14 +14,12 @@ const movies = require('./modules/movies.js');
 app.get('/weather', weatherHandler);
 
 function weatherHandler(request, response) {
-  const { lat, lon } = request.query;
-  // console.log(lat, lon);
-  
+  const { lat, lon } = request.query; 
   weather(lat, lon)
   .then(summaries => response.send(summaries))
   .catch((error) => {
     console.error(error);
-    response.status(200).send('Sorry. Something went wrong!')
+    response.status(500).send('Sorry. Something went wrong!')
   });
 }  
 
